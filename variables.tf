@@ -10,7 +10,7 @@ variable "availability_zones" {
 }
 
 variable "cluster_type" {
-  type    = "string"
+  type    = string
   default = "VirtualMachine"
 }
 
@@ -21,7 +21,7 @@ variable "convert_case" {
 }
 
 variable "container_network_type" {
-  type    = "string"
+  type    = string
   default = "overlay_l2"
 }
 
@@ -37,33 +37,37 @@ variable "enabled" {
   description = "Set to false to prevent the module from creating any resources"
 }
 
-variable "master_flavor_id" {
+variable "key_pair" {
   type = "string"
 }
 
+variable "master_flavor_id" {
+  type = string
+}
+
 variable "nodes_count" {
-  type = "number"
+  type = number
 }
 
 variable "nodes_data_volume_size" {
-  type = "number"
+  type = number
 }
 
 variable "nodes_data_volume_type" {
-  type    = "string"
+  type    = string
   default = "SATA"
 }
 
 variable "nodes_flavor_id" {
-  type = "string"
+  type = string
 }
 
 variable "nodes_root_volume_size" {
-  type = "number"
+  type = number
 }
 
 variable "nodes_root_volume_type" {
-  type    = "string"
+  type    = string
   default = "SATA"
 }
 
@@ -80,7 +84,7 @@ variable "stage" {
 }
 
 variable "subnet_id" {
-  type = "string"
+  type = string
 }
 
 variable "tags" {
@@ -90,5 +94,5 @@ variable "tags" {
 }
 
 variable "vpc_id" {
-  type = "string"
+  type = string
 }
