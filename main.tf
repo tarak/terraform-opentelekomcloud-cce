@@ -20,8 +20,10 @@ resource "opentelekomcloud_cce_cluster_v3" "this" {
 }
 
 resource "opentelekomcloud_cce_node_v3" "this" {
-  count             = var.enabled ? var.nodes_count : 0
-  name              = join(var.delimiter, [module.cce_label.id, "node", element(concat(var.availability_zones, [""]), count.index), format("%03.0f", count.index)])
+  count = var.enabled ? var.nodes_count : 0
+  # name              = join(var.delimiter, [module.cce_label.id, "node", element(concat(var.availability_zones, [""]), count.index), format("%03.0f", count.index)])
+  # changed due to BUG in OTC (name too long)
+  name              = join(var.delimiter, [module.cce_label.id, "node", format("%03.0f", count.index)])
   cluster_id        = opentelekomcloud_cce_cluster_v3.this[0].id
   flavor_id         = var.nodes_flavor_id
   availability_zone = element(concat(var.availability_zones, [""]), count.index)
