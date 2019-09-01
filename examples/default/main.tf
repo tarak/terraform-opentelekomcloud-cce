@@ -8,7 +8,7 @@ provider "opentelekomcloud" {
 }
 
 data "opentelekomcloud_vpc_v1" "vpc" {
-  name = "test-vpc"
+  name = "eclever-staging-vpc"
 }
 
 data "opentelekomcloud_vpc_subnet_v1" "subnet" {
@@ -17,7 +17,7 @@ data "opentelekomcloud_vpc_subnet_v1" "subnet" {
 }
 
 data "opentelekomcloud_compute_bms_keypairs_v2" "keypair" {
-  name = "test-ssh"
+  name = "admin"
 }
 
 
