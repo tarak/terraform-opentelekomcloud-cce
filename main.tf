@@ -18,7 +18,7 @@ resource "opentelekomcloud_cce_cluster_v3" "this" {
   vpc_id                 = var.vpc_id
   subnet_id              = var.subnet_id
   container_network_type = var.container_network_type
-  multi_az               = true
+  #multi_az               = true
 }
 
 resource "opentelekomcloud_cce_node_v3" "this" {
