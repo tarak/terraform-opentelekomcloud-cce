@@ -13,6 +13,7 @@ resource "opentelekomcloud_cce_cluster_v3" "this" {
   count                  = var.enabled ? 1 : 0
   name                   = "${module.cce_label.id}"
   cluster_type           = var.cluster_type
+  cluster_version	 = "v1.11.3-r1"
   flavor_id              = var.master_flavor_id
   vpc_id                 = var.vpc_id
   subnet_id              = var.subnet_id
